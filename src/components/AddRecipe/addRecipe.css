@@ -1,0 +1,169 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgba(82, 82, 82, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-recipe-modal {
+  position: relative;
+  width: 60%;
+  min-height: 50%;
+  max-height: 90%;
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1em;
+  z-index: 3;
+  padding-bottom: 2em;
+  overflow: auto;
+}
+
+.add-recipe-modal h1 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid grey;
+}
+
+.add-recipe-modal form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.add-recipe-modal .input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-title {
+  height: 2em;
+}
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.add-recipe-modal select {
+  margin-left: 1em;
+  height: 2em;
+  outline: none;
+  min-width: fit-content;
+  width: 10%;
+}
+.add-recipe-modal select:focus {
+  outline: 2px solid pink;
+}
+
+.add-recipe-modal ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.add-recipe-modal p,
+.add-recipe-modal li,
+.add-recipe-modal input.input-title {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-top: 0.5em;
+  word-break: break-all;
+  resize: none;
+  font-family: Montserrat;
+  font-size: 0.9em;
+  padding: 0.2em;
+  overflow: auto;
+  white-space: pre-line;
+}
+
+.add-recipe-modal li {
+  position: relative;
+  overflow: visible;
+  border: none;
+}
+
+.add-recipe-modal li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  width: 5px;
+  height: 1px;
+  background-color: black;
+}
+
+.add-recipe-modal li > span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  left: -40px;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-recipe-modal .add-ingredient {
+  margin-top: 2em;
+  display: flex;
+  align-content: center;
+  gap: 2em;
+}
+
+.add-recipe-modal input.input-ingredient {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  height: 2em;
+  width: 60%;
+  align-self: center;
+  margin: 0;
+  font-family: Montserrat;
+  font-size: 0.9em;
+}
+
+.add-recipe-modal .add-ingredient button {
+  align-self: center;
+  height: 2.25em;
+}
+
+.add-recipe-modal .input-process {
+  margin-left: 1em;
+  text-align: justify;
+}
+
+.add-recipe-modal .add-button {
+  width: 10em;
+  max-width: 80%;
+  height: 2em;
+  align-self: center;
+  border: 1px solid grey;
+  border-radius: 0.5em;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.65em;
+  right: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+}

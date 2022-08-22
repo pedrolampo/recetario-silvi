@@ -1,0 +1,12 @@
+.recipe-container {
+  width: calc(100% - 25%);
+  position: static;
+  margin-top: 6em;
+  margin-left: 25%;
+  overflow: visible;
+  background-color: rgb(241, 241, 241);
+}
+
+.loading {
+  text-align: center;
+}

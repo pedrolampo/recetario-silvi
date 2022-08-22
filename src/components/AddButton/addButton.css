@@ -1,0 +1,10 @@
+.add-btn {
+  width: 7em;
+  height: 3em;
+  background-color: rgb(113, 203, 255);
+  border: 1px solid black;
+  border-radius: 0.15em;
+  font-family: Montserrat;
+  font-weight: 500;
+  cursor: pointer;
+}
