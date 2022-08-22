@@ -31,3 +31,10 @@
 .category:hover {
   background-color: rgb(192, 192, 192);
 }
+
+@media screen and (max-width: 1200px) {
+  .categories-container {
+    top: 12em;
+    border-right: 1px solid grey;
+  }
+}

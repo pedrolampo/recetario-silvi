@@ -60,6 +60,7 @@ export default function AddRecipe({ showAddModal }) {
       .finally(() => {
         setProcessingRecipe(false);
         showAddModal(false);
+        window.location.reload();
       });
   };
 
@@ -73,7 +74,7 @@ export default function AddRecipe({ showAddModal }) {
         <h1>Agregar una nueva receta</h1>
         <form>
           <div className="input-container">
-            <label>Nombre</label>
+            <label>Nombre:</label>
             <input
               className="input-title"
               type="text"
@@ -83,7 +84,7 @@ export default function AddRecipe({ showAddModal }) {
           </div>
 
           <div>
-            <label>Categoría</label>
+            <label>Categoría:</label>
             <select onChange={(e) => setCategory(e.target.value)}>
               <option value="none" defaultValue>
                 Categoría
@@ -94,7 +95,7 @@ export default function AddRecipe({ showAddModal }) {
           </div>
 
           <div className="input-container">
-            <label>Ingredientes</label>
+            <label>Ingredientes:</label>
             <ul>
               {ingredientsList.map((el, key) => (
                 <li className="ingredients" key={key}>
@@ -120,7 +121,7 @@ export default function AddRecipe({ showAddModal }) {
           </div>
 
           <div className="input-container">
-            <label>Procedimiento</label>
+            <label>Procedimiento:</label>
             <p
               ref={processRef}
               className="input-process"
@@ -131,7 +132,7 @@ export default function AddRecipe({ showAddModal }) {
           </div>
 
           <button onClick={(e) => submitRecipe(e)} className="add-button">
-            Agregar
+            Agregar nueva receta
           </button>
         </form>
 

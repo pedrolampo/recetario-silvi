@@ -93,6 +93,7 @@
   padding: 0.2em;
   overflow: auto;
   white-space: pre-line;
+  background-color: rgb(241, 241, 241);
 }
 
 .add-recipe-modal li {
@@ -138,6 +139,7 @@
   margin: 0;
   font-family: Montserrat;
   font-size: 0.9em;
+  background-color: rgb(241, 241, 241);
 }
 
 .add-recipe-modal .add-ingredient button {
@@ -153,7 +155,7 @@
 .add-recipe-modal .add-button {
   width: 10em;
   max-width: 80%;
-  height: 2em;
+  min-height: 2em;
   align-self: center;
   border: 1px solid grey;
   border-radius: 0.5em;
@@ -166,4 +168,15 @@
   font-size: 1.5em;
   font-weight: bold;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .add-recipe-modal {
+    width: 85%;
+    margin-bottom: 6em;
+  }
+
+  .add-recipe-modal select {
+    width: 7em;
+  }
 }

@@ -11,3 +11,9 @@
   overflow: visible;
   background-color: rgb(241, 241, 241);
 }
+
+@media screen and (max-width: 1200px) {
+  .recipes-container {
+    margin-top: 13em;
+  }
+}

@@ -71,9 +71,13 @@ form.search-form {
   transform: translateX(-10%);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .header {
     flex-direction: column;
-    height: auto;
+    height: 12em;
+    border-bottom: 1px solid grey;
+  }
+  .header h1 {
+    margin: 0;
   }
 }

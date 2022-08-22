@@ -10,3 +10,10 @@
 .loading {
   text-align: center;
 }
+
+@media screen and (max-width: 1200px) {
+  .recipe-container {
+    margin-top: 12em;
+    padding-left: 2em;
+  }
+}
