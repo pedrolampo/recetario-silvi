@@ -17,3 +17,11 @@
     margin-top: 13em;
   }
 }
+
+@media screen and (max-width: 1080px) {
+  .recipes-container {
+    margin: 0;
+    margin-top: 19em;
+    width: 100%;
+  }
+}

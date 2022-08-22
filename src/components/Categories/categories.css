@@ -38,3 +38,13 @@
     border-right: 1px solid grey;
   }
 }
+
+@media screen and (max-width: 1080px) {
+  .categories-container {
+    width: 100%;
+    left: 0;
+    height: auto;
+    border: none;
+    border-bottom: 1px solid grey;
+  }
+}

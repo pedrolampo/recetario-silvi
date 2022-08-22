@@ -81,3 +81,9 @@ form.search-form {
     margin: 0;
   }
 }
+
+@media screen and (max-width: 1080px) {
+  .header .search-bar {
+    width: 15em;
+  }
+}
