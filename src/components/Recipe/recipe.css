@@ -1,0 +1,14 @@
+.recipe {
+  position: relative;
+  width: 100%;
+  padding-right: 5em;
+}
+
+.open-context-menu-btn {
+  position: absolute;
+  top: 1em;
+  right: 5em;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+}

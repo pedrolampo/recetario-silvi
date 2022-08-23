@@ -1,0 +1,43 @@
+.context-menu {
+  position: absolute;
+  top: 1em;
+  right: 7em;
+  width: 10em;
+  height: fit-content;
+  border: 1px solid grey;
+  border-radius: 0.5em;
+  border-top-right-radius: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: cornsilk;
+  opacity: 0;
+  transition: 250ms ease-in-out;
+  pointer-events: none;
+  user-select: none;
+}
+.context-menu.active {
+  opacity: 1;
+  pointer-events: all;
+  user-select: auto;
+}
+
+.context-menu-btn {
+  width: 100%;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+  cursor: pointer;
+}
+.context-menu-btn:hover {
+  background-color: lightgrey;
+  border-top-left-radius: 0.5em;
+}
+.context-menu-btn:last-of-type {
+  border: none;
+  border-radius: 0;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
