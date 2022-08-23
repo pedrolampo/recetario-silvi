@@ -28,6 +28,9 @@
   color: inherit;
   text-decoration: none;
 }
+.category.active {
+  background-color: rgba(192, 192, 192, 0.75);
+}
 .category:hover {
   background-color: rgb(192, 192, 192);
 }

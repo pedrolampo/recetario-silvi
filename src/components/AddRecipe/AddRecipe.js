@@ -60,7 +60,7 @@ export default function AddRecipe({ showAddModal }) {
       .finally(() => {
         setProcessingRecipe(false);
         showAddModal(false);
-        window.location.reload();
+        window.location.href = 'https://recetario-silvi.netlify.app/';
       });
   };
 
