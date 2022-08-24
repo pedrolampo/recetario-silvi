@@ -7,11 +7,9 @@
   background-color: rgb(241, 241, 241);
 }
 
-.loading {
-  width: calc(100% - 25%);
-  margin-top: 6em;
+.loading.modify {
+  margin-top: 4em;
   margin-left: 25%;
-  text-align: center;
 }
 
 .modify-recipe h1 {

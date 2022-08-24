@@ -9,7 +9,7 @@ import { ModifyRecipeContext } from '../../context/ModifyRecipeContext';
 import './modifyRecipe.css';
 
 export default function ModifyRecipe() {
-  const [processingRecipe, setProcessingRecipe] = useState(false);
+  const [processingRecipe, setProcessingRecipe] = useState(true);
   const addIngredientRef = createRef();
   const processRef = createRef();
 
@@ -35,6 +35,7 @@ export default function ModifyRecipe() {
       setCategory(docSnapshot.data().category);
       setIngredientsList(docSnapshot.data().ingredients);
       setProcess(docSnapshot.data().process);
+      setProcessingRecipe(false);
     });
   }, [recipeId]); //eslint-disable-line
 
@@ -81,7 +82,7 @@ export default function ModifyRecipe() {
   };
 
   if (processingRecipe) {
-    return <h1 className="loading">Cargando...</h1>;
+    return <p className="loading modify">Cargando...</p>;
   }
 
   return (

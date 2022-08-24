@@ -65,7 +65,7 @@ export default function AddRecipe({ showAddModal }) {
   };
 
   if (processingRecipe) {
-    return <h1>Cargando la receta...</h1>;
+    return <h1 className="loading">Cargando la receta...</h1>;
   }
 
   return (

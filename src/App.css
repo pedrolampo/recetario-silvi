@@ -12,3 +12,9 @@
   justify-content: center;
   background-color: rgb(241, 241, 241);
 }
+
+.loading {
+  font-size: 2em;
+  width: calc(100% - 25%);
+  text-align: center;
+}
