@@ -46,3 +46,10 @@ a.context-menu-btn:hover {
   border: none;
   border-radius: 0.5em;
 }
+
+@media screen and (max-width: 1200px) {
+  .context-menu {
+    top: 0;
+    right: 3em;
+  }
+}

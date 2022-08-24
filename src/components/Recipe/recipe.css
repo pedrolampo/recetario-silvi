@@ -12,3 +12,10 @@
   height: 2em;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+  .open-context-menu-btn {
+    top: 0;
+    right: 1em;
+  }
+}
