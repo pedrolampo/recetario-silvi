@@ -27,7 +27,8 @@
   text-decoration: none;
 }
 
-.context-menu-btn {
+.context-menu-btn,
+a.context-menu-btn {
   width: 100%;
   height: 3em;
   display: flex;
@@ -36,13 +37,12 @@
   border-bottom: 1px solid grey;
   cursor: pointer;
 }
-.context-menu-btn:hover {
+.context-menu-btn:hover,
+a.context-menu-btn:hover {
   background-color: lightgrey;
-  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0;
 }
 .context-menu-btn:last-of-type {
   border: none;
-  border-radius: 0;
-  border-bottom-left-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
+  border-radius: 0.5em;
 }
