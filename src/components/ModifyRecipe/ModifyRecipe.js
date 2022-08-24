@@ -66,7 +66,6 @@ export default function ModifyRecipe() {
 
     getDoc(doc(db, 'recipes', recipeId))
       .then((docSnapshot) => {
-        console.log(docSnapshot.data());
         batch.update(doc(db, 'recipes', docSnapshot.id), {
           category: recipe.category,
           title: recipe.title,
@@ -105,11 +104,10 @@ export default function ModifyRecipe() {
           <select
             name="catSelect"
             id="catSelect"
+            defaultValue={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="none" defaultValue>
-              Categoría
-            </option>
+            <option value="none">Categoría</option>
             <option value="dulce">Dulce</option>
             <option value="salado">Salado</option>
           </select>
@@ -143,16 +141,16 @@ export default function ModifyRecipe() {
 
         <div className="input-container">
           <label>Procedimiento:</label>
-          <p
+          <textarea
             ref={processRef}
             className="input-process"
-            type="text"
-            contentEditable
-            suppressContentEditableWarning={true}
-            onKeyDown={() => setProcess(processRef.current.textContent)}
-          >
-            {process}
-          </p>
+            value={process}
+            onChange={(e) => {
+              setProcess(e.target.value);
+              e.target.style.height = '0px';
+              e.target.style.height = e.target.scrollHeight + 'px';
+            }}
+          ></textarea>
         </div>
 
         <button onClick={(e) => update(e)} className="add-button">

@@ -67,7 +67,7 @@
   margin: 0;
 }
 
-.modify-recipe p,
+.modify-recipe textarea,
 .modify-recipe li,
 .modify-recipe input.input-title {
   outline: none;
@@ -130,7 +130,7 @@
   border-radius: 0.25em;
 }
 
-.modify-recipe .input-container p {
+.modify-recipe .input-container textarea {
   background-color: white;
   border-radius: 0.25em;
 }
