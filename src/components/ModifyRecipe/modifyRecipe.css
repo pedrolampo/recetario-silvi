@@ -1,0 +1,189 @@
+.modify-recipe {
+  width: calc(100% - 25%);
+  position: static;
+  margin-top: 6em;
+  margin-left: 25%;
+  overflow: visible;
+  background-color: rgb(241, 241, 241);
+}
+
+.loading {
+  width: calc(100% - 25%);
+  margin-top: 6em;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.modify-recipe h1 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid grey;
+}
+
+.modify-recipe form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.modify-recipe .input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modify-recipe input.input-title {
+  height: 2em;
+  background-color: white;
+  border-radius: 0.25em;
+}
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.modify-recipe select {
+  margin-left: 1em;
+  height: 2em;
+  outline: none;
+  min-width: fit-content;
+  width: 10%;
+}
+.modify-recipe select:focus {
+  outline: 2px solid pink;
+}
+
+.modify-recipe ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.modify-recipe p,
+.modify-recipe li,
+.modify-recipe input.input-title {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-top: 0.5em;
+  word-break: break-all;
+  resize: none;
+  font-family: Montserrat;
+  font-size: 0.9em;
+  padding: 0.2em;
+  overflow: auto;
+  white-space: pre-line;
+}
+
+.modify-recipe li {
+  position: relative;
+  overflow: visible;
+  border: none;
+}
+
+.modify-recipe li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  width: 5px;
+  height: 1px;
+  background-color: black;
+}
+
+.modify-recipe li > span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  left: -40px;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modify-recipe .add-ingredient {
+  margin-top: 2em;
+  display: flex;
+  align-content: center;
+  gap: 2em;
+}
+
+.modify-recipe input.input-ingredient {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  height: 2em;
+  width: 60%;
+  align-self: center;
+  margin: 0;
+  font-family: Montserrat;
+  font-size: 0.9em;
+  background-color: white;
+  border-radius: 0.25em;
+}
+
+.modify-recipe .input-container p {
+  background-color: white;
+  border-radius: 0.25em;
+}
+
+.modify-recipe .add-ingredient button {
+  align-self: center;
+  height: 2.25em;
+}
+
+.modify-recipe .input-process {
+  margin-left: 1em;
+  text-align: justify;
+}
+
+.modify-recipe .add-button {
+  width: 10em;
+  max-width: 80%;
+  min-height: 2em;
+  align-self: center;
+  border: 1px solid grey;
+  border-radius: 0.5em;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.65em;
+  right: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .recipe-container {
+    margin-top: 12em;
+    padding-left: 2em;
+  }
+
+  .modify-recipe select {
+    width: 7em;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .recipe-container {
+    margin: 0;
+    margin-top: 19em;
+    width: 100%;
+  }
+
+  .modify-recipe h1 {
+    font-size: 1.15em;
+  }
+}
