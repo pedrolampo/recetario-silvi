@@ -83,6 +83,18 @@ export const getSingleRecipe = (value) => {
   });
 };
 
+export const getPass = () => {
+  return new Promise((res, rej) => {
+    getDoc(doc(db, 'data', 'VMaK6GhgZFl5JfF1xfVt'))
+      .then((querySnapshot) => {
+        res(querySnapshot.data().pass);
+      })
+      .catch((err) => {
+        rej(`error al obtener los datos: ${err}`);
+      });
+  });
+};
+
 export const pushRecipe = () => {
   setDoc(doc(db, 'recipes', { title: 'Torta Negra', category: 'dulce' }));
 };

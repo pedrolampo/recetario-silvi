@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: cornsilk;
+  background-color: lightgrey;
   opacity: 0;
   transition: 250ms ease-in-out;
   pointer-events: none;
@@ -34,16 +34,14 @@ a.context-menu-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid grey;
   cursor: pointer;
 }
 .context-menu-btn:hover,
 a.context-menu-btn:hover {
-  background-color: lightgrey;
+  background-color: rgb(175, 175, 175);
   border-top-right-radius: 0;
 }
 .context-menu-btn:last-of-type {
-  border: none;
   border-radius: 0.5em;
 }
 
