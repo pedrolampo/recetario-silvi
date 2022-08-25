@@ -1,5 +1,6 @@
 import React, { useContext, createRef, useState } from 'react';
 import { addDoc, collection, writeBatch } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 import { db } from '../../services/Firebase/firebase';
 
@@ -11,6 +12,7 @@ export default function AddRecipe({ showAddModal }) {
   const [processingRecipe, setProcessingRecipe] = useState(false);
   const addIngredientRef = createRef();
   const processRef = createRef();
+  const navigate = useNavigate();
 
   const {
     name,
@@ -60,7 +62,7 @@ export default function AddRecipe({ showAddModal }) {
       .finally(() => {
         setProcessingRecipe(false);
         showAddModal(false);
-        window.location.href = 'https://recetario-silvi.netlify.app/';
+        navigate('/');
       });
   };
 
