@@ -46,6 +46,7 @@ div.notification {
 
 .confirm-notif h4 {
   margin: 0 0 1em 0;
+  text-align: center;
 }
 
 .confirm-notif .notif-btn-container {
@@ -60,6 +61,22 @@ div.notification {
 .confirm-notif .notif-btn-container button {
   width: 5em;
   height: 2em;
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.confirm-notif .notif-input {
+  width: 75%;
+  margin-bottom: 1.5em;
+  background-color: rgba(241, 241, 241, 0.75);
+  border: 1px solid grey;
+  font-family: Montserrat;
+  padding: 0.2em;
+  font-weight: 500;
+}
+.confirm-notif .notif-input:focus {
+  outline: 1px solid black;
+  border-radius: 0.1em;
 }
 
 @media screen and (max-width: 1100px) {
