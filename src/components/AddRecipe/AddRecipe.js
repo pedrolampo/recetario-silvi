@@ -24,6 +24,7 @@ export default function AddRecipe({ showAddModal }) {
     removeIngredient,
     setIngredient,
     addIngredient,
+    setIngredientsList,
     setProcess,
   } = useContext(AddRecipeContext);
 
@@ -61,6 +62,7 @@ export default function AddRecipe({ showAddModal }) {
       })
       .finally(() => {
         setProcessingRecipe(false);
+        setIngredientsList([]);
         showAddModal(false);
         navigate('/');
       });
