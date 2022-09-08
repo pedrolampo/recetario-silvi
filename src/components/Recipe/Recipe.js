@@ -13,7 +13,8 @@ export default function Recipe({ recipe }) {
     return (
       <div className="recipe">
         <h1 className="recipe-title">{recipe.title}</h1>
-        <h4>Ingredientes</h4>
+
+        <h4 className="recipe-subtitle">Ingredientes</h4>
         <ul className="recipe-ingredients-list">
           {recipe.ingredients.map((i) => (
             <li className="recipe-ingredient" key={i}>
@@ -21,8 +22,10 @@ export default function Recipe({ recipe }) {
             </li>
           ))}
         </ul>
-        <h4>Procedimiento</h4>
+
+        <h4 className="recipe-subtitle">Procedimiento</h4>
         <p className="recipe-process">{recipe.process}</p>
+
         <div
           className="open-context-menu-btn"
           onClick={() => setContextMenuOpen(!contextMenuOpen)}

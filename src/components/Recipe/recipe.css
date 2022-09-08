@@ -4,6 +4,47 @@
   padding-right: 5em;
 }
 
+.recipe .recipe-title {
+  color: #da6837;
+  font-family: Papernotes;
+  font-size: 4em;
+  text-align: center;
+}
+
+.recipe .recipe-subtitle {
+  color: #2b718e;
+  font-family: Papernotes;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.recipe .recipe-ingredients-list {
+  list-style-type: none;
+  margin: 1em 1em;
+  padding: 0;
+}
+
+.recipe .recipe-ingredient {
+  color: #5b362b;
+  font-size: 1.25em;
+  position: relative;
+}
+.recipe .recipe-ingredient::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: -14px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #5b362b;
+}
+
+.recipe .recipe-process {
+  color: #5b362b;
+  font-size: 1.25em;
+}
+
 .open-context-menu-btn {
   position: absolute;
   top: 1em;

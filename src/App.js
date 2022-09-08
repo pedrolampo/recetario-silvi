@@ -7,7 +7,6 @@ import { NotificationContextProvider } from './context/NotificationContext';
 
 import Header from './components/Header/Header';
 import RecipesContainer from './components/RecipesContainer/RecipesContainer';
-import Categories from './components/Categories/Categories';
 import AddRecipe from './components/AddRecipe/AddRecipe';
 import RecipeContainer from './components/RecipeContainer/RecipeContainer';
 import ModifyRecipe from './components/ModifyRecipe/ModifyRecipe';
@@ -25,7 +24,6 @@ function App() {
           <NotificationContextProvider>
             <BrowserRouter>
               <Header showAddModal={setShowAddModal} />
-              <Categories />
               <Notification />
               <Routes>
                 <Route exact path="/" element={<RecipesContainer />} />

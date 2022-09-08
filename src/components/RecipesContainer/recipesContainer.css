@@ -6,22 +6,19 @@
   justify-content: center;
   gap: 2em;
   position: static;
-  margin-top: 6em;
-  margin-left: 25%;
+  margin-top: 2em;
+  margin-bottom: 2em;
   overflow: visible;
-  background-color: rgb(241, 241, 241);
 }
 
-@media screen and (max-width: 1200px) {
-  .recipes-container {
-    margin-top: 13em;
-  }
+.recipes-container .section-title {
+  font-size: 4em;
+  color: #da6837;
+  margin: 0.5em 0;
 }
 
 @media screen and (max-width: 1080px) {
   .recipes-container {
-    margin: 0;
-    margin-top: 19em;
     width: 100%;
   }
 }

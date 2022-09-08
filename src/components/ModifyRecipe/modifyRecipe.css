@@ -1,10 +1,9 @@
 .modify-recipe {
   width: calc(100% - 25%);
   position: static;
-  margin-top: 6em;
-  margin-left: 25%;
+  margin-top: 2em;
+  margin-bottom: 2em;
   overflow: visible;
-  background-color: rgb(241, 241, 241);
 }
 
 .loading.modify {
@@ -16,11 +15,10 @@
   width: 100%;
   text-align: center;
   padding-bottom: 0.5em;
-  border-bottom: 1px solid grey;
 }
 
 .modify-recipe form {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5em;
@@ -34,8 +32,9 @@
 }
 
 .modify-recipe input.input-title {
+  width: 40%;
   height: 2em;
-  background-color: white;
+  background-color: #f8ce90;
   border-radius: 0.25em;
 }
 ::-webkit-input-placeholder {
@@ -72,7 +71,7 @@
 .modify-recipe input.input-title {
   outline: none;
   border: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #da6837;
   margin-top: 0.5em;
   word-break: break-all;
   resize: none;
@@ -119,19 +118,19 @@
 .modify-recipe input.input-ingredient {
   border: none;
   outline: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #da6837;
   height: 2em;
   width: 60%;
   align-self: center;
   margin: 0;
   font-family: Montserrat;
   font-size: 0.9em;
-  background-color: white;
+  background-color: #f8ce90;
   border-radius: 0.25em;
 }
 
 .modify-recipe .input-container textarea {
-  background-color: white;
+  background-color: #f8ce90;
   border-radius: 0.25em;
 }
 
@@ -141,8 +140,9 @@
 }
 
 .modify-recipe .input-process {
-  margin-left: 1em;
+  width: 100%;
   text-align: justify;
+  border: 1px solid #da6837;
 }
 
 .modify-recipe .add-button {
@@ -165,7 +165,6 @@
 
 @media screen and (max-width: 1200px) {
   .modify-recipe {
-    margin-top: 12em;
     padding: 0;
   }
 
@@ -181,10 +180,7 @@
 
 @media screen and (max-width: 1080px) {
   .modify-recipe {
-    margin: 0;
-    margin-top: 19em;
     width: 100%;
-    margin-bottom: 2em;
   }
 
   .modify-recipe h1 {

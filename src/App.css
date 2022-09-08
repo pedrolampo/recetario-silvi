@@ -4,13 +4,39 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Bright;
+  src: url(../public/fonts/Bright\ DEMO.otf);
+}
+@font-face {
+  font-family: PapernotesBold;
+  src: url(../public/fonts/Papernotes\ Bold.otf);
+}
+@font-face {
+  font-family: PapernotesSketch;
+  src: url(../public/fonts/Papernotes\ Sketch.otf);
+}
+@font-face {
+  font-family: Papernotes;
+  src: url(../public/fonts/Papernotes.otf);
+}
+
+:root {
+  --background-color: #f8ce90;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
 .App {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(241, 241, 241);
+  background-color: var(--background-color);
+  font-family: Papernotes;
 }
 
 .loading {

@@ -10,7 +10,7 @@ export default function AddButton({ showAddModal }) {
         showAddModal(true);
       }}
     >
-      Agregar
+      Nueva Receta
     </button>
   );
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
 import { getRecipes, searchRecipes } from '../../services/Firebase/firebase';
 
@@ -9,10 +9,21 @@ import './recipesContainer.css';
 
 export default function RecipesContainer() {
   const [recipes, setRecipes] = useState([]);
+  const [title, setTitle] = useState('MIS RECETAS');
   const [empty, setEmpty] = useState(false);
   const { catId, searchQuery } = useParams();
 
+  const location = useLocation().pathname;
+
   useEffect(() => {
+    if (location.includes('dulce')) {
+      setTitle('DULCE');
+    } else if (location.includes('salado')) {
+      setTitle('SALADO');
+    } else if (location === '/') {
+      setTitle('MIS RECETAS');
+    }
+
     if (searchQuery) {
       searchRecipes()
         .then((res) => {
@@ -41,7 +52,7 @@ export default function RecipesContainer() {
     return () => {
       setRecipes([]);
     };
-  }, [catId, searchQuery]);
+  }, [catId, searchQuery, location]);
 
   const conditionalRecipes = (recipes) => {
     if (recipes.length > 0) {
@@ -59,6 +70,7 @@ export default function RecipesContainer() {
 
   return (
     <section className="recipes-container">
+      <h1 className="section-title">{title}</h1>
       {conditionalRecipes(recipes)}
     </section>
   );
