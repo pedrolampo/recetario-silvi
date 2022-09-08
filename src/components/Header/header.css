@@ -1,13 +1,12 @@
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 5em;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(241, 241, 241);
   z-index: 1;
 }
 
@@ -15,44 +14,49 @@
   text-decoration: none;
 }
 
-.header h1 {
-  margin: 1em 0;
-  color: black;
-}
-
 form.search-form {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .search-bar {
-  width: 30em;
-  height: 3em;
+  width: 20em;
+  height: 2.75em;
   outline: none;
   border-radius: 0;
-  border: 1px solid darkgrey;
+  border: 1px solid rgb(48, 48, 48);
   padding-left: 1.5em;
   border-top-left-radius: 3em;
   border-bottom-left-radius: 3em;
   font-family: 'Montserrat';
+  background-color: #ffecd0;
+  color: #5b362b;
 }
 .search-bar:focus {
-  border-color: pink;
+  border-color: #da6837;
+}
+.search-bar:focus + .search-btn {
+  border-color: #da6837;
 }
 
 .search-btn {
-  width: 4em;
-  height: 3em;
+  width: 3em;
+  height: 2.75em;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid darkgrey;
+  border: 1px solid rgb(48, 48, 48);
   border-top-right-radius: 3em;
   border-bottom-right-radius: 3em;
   border-left: none;
+  background-color: #da6837;
 }
 .search-btn.disabled {
   pointer-events: none;
@@ -67,9 +71,34 @@ form.search-form {
   border-bottom-right-radius: 3em;
 }
 .search-btn svg {
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.25em;
+  height: 1.25em;
   transform: translateX(-10%);
+}
+
+.categories-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  gap: 1em;
+}
+.categories-list a {
+  color: #5b362b;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+.categories-list .active a {
+  border-bottom: 2px solid rgb(48, 48, 48);
+  border-radius: 1px;
+}
+
+.add-btn {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 3em;
 }
 
 @media screen and (max-width: 1200px) {

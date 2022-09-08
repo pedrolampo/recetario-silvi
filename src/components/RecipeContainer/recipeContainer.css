@@ -1,23 +1,18 @@
 .recipe-container {
   width: calc(100% - 25%);
   position: static;
-  margin-top: 6em;
-  margin-left: 25%;
+  margin-top: 2em;
   overflow: visible;
-  background-color: rgb(241, 241, 241);
 }
 
 @media screen and (max-width: 1200px) {
   .recipe-container {
-    margin-top: 12em;
     padding-left: 2em;
   }
 }
 
 @media screen and (max-width: 1080px) {
   .recipe-container {
-    margin: 0;
-    margin-top: 19em;
     width: 100%;
   }
 }

@@ -1,19 +1,56 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import AddButton from '../AddButton/AddButton';
 
 import './header.css';
 
 export default function Header({ showAddModal }) {
+  const [dulce, setDulce] = useState(false);
+  const [salado, setSalado] = useState(false);
+  const [inicio, setInicio] = useState(false);
   const [search, setSearch] = useState('');
+
   const navigate = useNavigate();
+  const location = useLocation().pathname;
+
+  useEffect(() => {
+    if (location.includes('dulce')) {
+      setDulce(true);
+      setSalado(false);
+      setInicio(false);
+      return;
+    } else if (location.includes('salado')) {
+      setSalado(true);
+      setDulce(false);
+      setInicio(false);
+      return;
+    } else if (location === '/') {
+      setInicio(true);
+      setSalado(false);
+      setDulce(false);
+      return;
+    }
+    setDulce(false);
+    setSalado(false);
+    setInicio(false);
+  }, [location]);
 
   return (
     <header className="header">
-      <Link to="/">
-        <h1 className="header-title">Recetario de Silvi</h1>
-      </Link>
+      <AddButton className="add-btn" showAddModal={showAddModal} />
+
+      <ul className="categories-list">
+        <li className={inicio ? 'category active' : 'category'}>
+          <Link to="/">INICIO</Link>
+        </li>
+        <li className={dulce ? 'category active' : 'category'}>
+          <Link to="/category/dulce">DULCE</Link>
+        </li>
+        <li className={salado ? 'category active' : 'category'}>
+          <Link to="/category/salado">SALADO</Link>
+        </li>
+      </ul>
 
       <form className="search-form">
         <input
@@ -22,6 +59,7 @@ export default function Header({ showAddModal }) {
           placeholder="Buscar..."
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={(e) => {
+            if (search.length === 0) return;
             if (e.key === 'Enter') {
               navigate(`/search/${search}`);
             }
@@ -40,8 +78,6 @@ export default function Header({ showAddModal }) {
           </Link>
         </button>
       </form>
-
-      <AddButton showAddModal={showAddModal} />
     </header>
   );
 }
