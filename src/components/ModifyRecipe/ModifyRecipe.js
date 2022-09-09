@@ -134,7 +134,7 @@ export default function ModifyRecipe() {
               onChange={(e) => setIngredient(e.target.value)}
             ></input>
             <button onClick={(e) => modifyIngredient(e, addIngredientRef)}>
-              Agregar
+              Agregar Ingrediente
             </button>
           </div>
         </div>
