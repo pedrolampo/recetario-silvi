@@ -32,7 +32,8 @@
   padding-bottom: 0.5em;
   border-bottom: 1px solid grey;
   color: #da6837;
-  font-size: 2em;
+  font-size: 2.25em;
+  font-family: Bright;
 }
 
 .add-recipe-modal form {
@@ -45,7 +46,9 @@
 
 .add-recipe-modal label {
   color: #2b718e;
-  font-size: 1.5em;
+  font-size: 2em;
+  font-family: Bright;
+  font-weight: bold;
 }
 
 .add-recipe-modal .input-container {
@@ -124,7 +127,7 @@
 .add-recipe-modal li > span {
   position: absolute;
   top: 50%;
-  transform: translateY(-55%);
+  transform: translateY(-50%);
   left: -40px;
   color: red;
   font-weight: bold;
@@ -176,7 +179,7 @@
 
 .close-modal {
   position: absolute;
-  top: 0.65em;
+  top: 1em;
   right: 1em;
   font-size: 1.5em;
   font-weight: bold;

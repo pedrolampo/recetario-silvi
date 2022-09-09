@@ -14,9 +14,8 @@
 .modify-recipe h1 {
   width: 100%;
   text-align: center;
-  padding-bottom: 0.5em;
   color: #da6837;
-  font-size: 3em;
+  font-size: 4em;
   font-family: Bright;
 }
 
@@ -31,6 +30,7 @@
 .modify-recipe form label {
   color: #2b718e;
   font-size: 2em;
+  font-family: Bright;
 }
 
 .modify-recipe .input-container {

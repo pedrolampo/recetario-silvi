@@ -28,7 +28,7 @@
 
 .card h1.card-title {
   user-select: none;
-  font-size: 1.4em;
+  font-size: 1.75em;
 }
 
 @media screen and (max-width: 1200px) {
