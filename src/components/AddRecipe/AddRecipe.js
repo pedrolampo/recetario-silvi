@@ -119,7 +119,7 @@ export default function AddRecipe({ showAddModal }) {
                 onChange={(e) => setIngredient(e.target.value)}
               ></input>
               <button onClick={(e) => addIngredient(e, addIngredientRef)}>
-                Agregar
+                Agregar Ingrediente
               </button>
             </div>
           </div>

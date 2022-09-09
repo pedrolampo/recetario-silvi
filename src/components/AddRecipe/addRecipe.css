@@ -16,7 +16,7 @@
   width: 60%;
   min-height: 50%;
   max-height: 90%;
-  background-color: rgb(241, 241, 241);
+  background-color: #f8ce90;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +31,8 @@
   text-align: center;
   padding-bottom: 0.5em;
   border-bottom: 1px solid grey;
+  color: #da6837;
+  font-size: 2em;
 }
 
 .add-recipe-modal form {
@@ -39,6 +41,11 @@
   flex-direction: column;
   gap: 1.5em;
   margin-top: 1em;
+}
+
+.add-recipe-modal label {
+  color: #2b718e;
+  font-size: 1.5em;
 }
 
 .add-recipe-modal .input-container {
@@ -69,6 +76,8 @@
   outline: none;
   min-width: fit-content;
   width: 10%;
+  color: #5b362b;
+  background-color: #ffecd0;
 }
 .add-recipe-modal select:focus {
   outline: 2px solid pink;
@@ -93,7 +102,7 @@
   padding: 0.2em;
   overflow: auto;
   white-space: pre-line;
-  background-color: rgb(241, 241, 241);
+  background-color: #f8ce90;
 }
 
 .add-recipe-modal li {
@@ -139,12 +148,15 @@
   margin: 0;
   font-family: Montserrat;
   font-size: 0.9em;
-  background-color: rgb(241, 241, 241);
+  background-color: #f8ce90;
 }
 
 .add-recipe-modal .add-ingredient button {
   align-self: center;
   height: 2.25em;
+  background-color: #ffecd0;
+  border-radius: 0.25em;
+  border: 1px solid #5b362b;
 }
 
 .add-recipe-modal .input-process {
@@ -157,6 +169,7 @@
   max-width: 80%;
   min-height: 2em;
   align-self: center;
+  background-color: #ffecd0;
   border: 1px solid grey;
   border-radius: 0.5em;
 }
@@ -187,12 +200,16 @@
   }
 
   .add-recipe-modal h1 {
-    font-size: 1.15em;
+    font-size: 1.5em;
+  }
+
+  .add-recipe-modal .add-ingredient button {
+    height: 3em;
   }
 
   .close-modal {
     position: absolute;
-    top: 0.5em;
+    top: 0.25em;
     right: 0.75em;
     font-size: 1.15em;
     font-weight: bold;

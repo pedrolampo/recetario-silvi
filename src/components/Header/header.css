@@ -46,7 +46,7 @@ form.search-form {
 
 .search-btn {
   width: 3em;
-  height: 2.75em;
+  height: calc(calc(1px / 2) + 2.75em);
   margin: 0;
   padding: 0;
   display: flex;
@@ -104,17 +104,28 @@ form.search-form {
 @media screen and (max-width: 1200px) {
   .header {
     flex-direction: column;
-    height: 12em;
+    justify-content: space-evenly;
+    height: 10em;
     border-bottom: 1px solid grey;
+    padding-top: 1em;
   }
-  .header h1 {
-    margin: 0;
+  .categories-list {
+    margin-bottom: 2em;
+  }
+  .header .search-form {
+    position: static;
   }
 }
 
 @media screen and (max-width: 1100px) {
+  .header {
+    height: 15em;
+  }
   .header .search-bar {
-    width: 35em;
+    width: 30em;
+  }
+  .header .add-btn {
+    position: static;
   }
 }
 

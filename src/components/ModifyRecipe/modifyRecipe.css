@@ -15,6 +15,9 @@
   width: 100%;
   text-align: center;
   padding-bottom: 0.5em;
+  color: #da6837;
+  font-size: 3em;
+  font-family: Bright;
 }
 
 .modify-recipe form {
@@ -23,6 +26,11 @@
   flex-direction: column;
   gap: 1.5em;
   margin-top: 1em;
+}
+
+.modify-recipe form label {
+  color: #2b718e;
+  font-size: 2em;
 }
 
 .modify-recipe .input-container {
@@ -56,6 +64,7 @@
   outline: none;
   min-width: fit-content;
   width: 10%;
+  background-color: #ffecd0;
 }
 .modify-recipe select:focus {
   outline: 2px solid pink;
@@ -73,7 +82,6 @@
   border: none;
   border-bottom: 1px solid #da6837;
   margin-top: 0.5em;
-  word-break: break-all;
   resize: none;
   font-family: Montserrat;
   font-size: 0.9em;
@@ -132,11 +140,15 @@
 .modify-recipe .input-container textarea {
   background-color: #f8ce90;
   border-radius: 0.25em;
+  padding-right: 0.5em;
 }
 
 .modify-recipe .add-ingredient button {
   align-self: center;
   height: 2.25em;
+  background-color: #ffecd0;
+  border: 1px solid #5b362b;
+  border-radius: 0.25em;
 }
 
 .modify-recipe .input-process {
@@ -151,6 +163,7 @@
   min-height: 2em;
   align-self: center;
   border: 1px solid grey;
+  background-color: #ffecd0;
   border-radius: 0.5em;
 }
 
@@ -173,6 +186,16 @@
     width: 100%;
   }
 
+  .modify-recipe .add-ingredient button {
+    height: 3em;
+  }
+
+  .modify-recipe input.input-ingredient,
+  .modify-recipe input.input-title {
+    width: 100%;
+    font-size: 1em;
+  }
+
   .modify-recipe select {
     width: 7em;
   }
@@ -184,6 +207,6 @@
   }
 
   .modify-recipe h1 {
-    font-size: 1.15em;
+    font-size: 3em;
   }
 }
