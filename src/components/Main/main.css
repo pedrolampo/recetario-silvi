@@ -15,10 +15,12 @@
   font-size: 5em;
   font-family: Bright;
   color: #da6837;
+  text-align: center;
 }
 
 .main-screen-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 3em;
