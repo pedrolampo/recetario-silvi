@@ -6,6 +6,7 @@ import { ModifyRecipeContextProvider } from './context/ModifyRecipeContext';
 import { NotificationContextProvider } from './context/NotificationContext';
 
 import Header from './components/Header/Header';
+import Main from './components/Main/Main';
 import RecipesContainer from './components/RecipesContainer/RecipesContainer';
 import AddRecipe from './components/AddRecipe/AddRecipe';
 import RecipeContainer from './components/RecipeContainer/RecipeContainer';
@@ -26,7 +27,7 @@ function App() {
               <Header showAddModal={setShowAddModal} />
               <Notification />
               <Routes>
-                <Route exact path="/" element={<RecipesContainer />} />
+                <Route exact path="/" element={<Main />} />
                 <Route path="/category/:catId" element={<RecipesContainer />} />
                 <Route
                   path="/search/:searchQuery"
