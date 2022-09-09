@@ -90,8 +90,8 @@ form.search-form {
   text-decoration: none;
 }
 .categories-list .active a {
-  border-bottom: 2px solid rgb(48, 48, 48);
-  border-radius: 1px;
+  border-bottom: 2px solid #5b362b;
+  border-radius: 2px;
 }
 
 .add-btn {

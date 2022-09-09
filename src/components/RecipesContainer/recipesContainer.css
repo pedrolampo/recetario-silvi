@@ -12,9 +12,10 @@
 }
 
 .recipes-container .section-title {
-  font-size: 4em;
+  font-size: 5em;
   color: #da6837;
   margin: 0.5em 0;
+  font-family: Bright;
 }
 
 @media screen and (max-width: 1080px) {
