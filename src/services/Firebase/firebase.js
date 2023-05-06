@@ -11,15 +11,15 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAilxeWaKCuC1uWx1RQGEo386sPkSq9MVo',
-  authDomain: 'recetario-silvi.firebaseapp.com',
-  projectId: 'recetario-silvi',
-  storageBucket: 'recetario-silvi.appspot.com',
-  messagingSenderId: '1004000079429',
-  appId: '1:1004000079429:web:d115c0ee592332d634fd2c',
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 
@@ -85,7 +85,7 @@ export const getSingleRecipe = (value) => {
 
 export const getPass = () => {
   return new Promise((res, rej) => {
-    getDoc(doc(db, 'data', 'VMaK6GhgZFl5JfF1xfVt'))
+    getDoc(doc(db, 'data', process.env.REACT_APP_passId))
       .then((querySnapshot) => {
         res(querySnapshot.data().pass);
       })

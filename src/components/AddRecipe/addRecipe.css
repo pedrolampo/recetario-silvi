@@ -14,7 +14,7 @@
 .add-recipe-modal {
   position: relative;
   width: 60%;
-  min-height: 50%;
+  min-height: 85%;
   max-height: 90%;
   background-color: #f8ce90;
   display: flex;
