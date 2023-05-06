@@ -5,6 +5,8 @@ export const ModifyRecipeContext = React.createContext();
 export function ModifyRecipeContextProvider({ children }) {
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
+  const [image, setImage] = useState('');
+  const [imageUpload, setImageUpload] = useState(null);
 
   const [ingredient, setIngredient] = useState('');
   const [ingredientsList, setIngredientsList] = useState([]);
@@ -30,10 +32,14 @@ export function ModifyRecipeContextProvider({ children }) {
 
   const value = {
     name,
+    image,
+    imageUpload,
     ingredientsList,
     process,
     category,
     setName,
+    setImage,
+    setImageUpload,
     setCategory,
     setIngredient,
     setIngredientsList,

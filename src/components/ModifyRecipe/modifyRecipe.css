@@ -167,6 +167,12 @@
   border-radius: 0.5em;
 }
 
+.modify-recipe .add-button.image-btn {
+  align-self: start;
+  margin-top: 10px;
+  background: #fff;
+}
+
 .close-modal {
   position: absolute;
   top: 0.65em;

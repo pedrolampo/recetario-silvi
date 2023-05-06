@@ -7,8 +7,12 @@ import { db } from '../../services/Firebase/firebase';
 import { ModifyRecipeContext } from '../../context/ModifyRecipeContext';
 
 import './modifyRecipe.css';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { storage } from '../../services/Firebase/storage';
+import { v4 } from 'uuid';
 
 export default function ModifyRecipe() {
+  const [uploadingImage, setUploadingImage] = useState(false);
   const [processingRecipe, setProcessingRecipe] = useState(true);
   const addIngredientRef = createRef();
   const processRef = createRef();
@@ -17,10 +21,14 @@ export default function ModifyRecipe() {
 
   const {
     name,
+    image,
+    imageUpload,
     category,
     ingredientsList,
     process,
     setName,
+    setImage,
+    setImageUpload,
     setCategory,
     setProcess,
     removeIngredient,
@@ -28,6 +36,42 @@ export default function ModifyRecipe() {
     setIngredientsList,
     modifyIngredient,
   } = useContext(ModifyRecipeContext);
+
+  const uploadImage = (e) => {
+    e.preventDefault();
+
+    if (imageUpload === null) return;
+
+    setUploadingImage(true);
+
+    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref)
+        .then((url) => {
+          setImage(url);
+        })
+        .catch((err) => {
+          console.log(err);
+          setUploadingImage('error');
+        })
+        .finally(() => {
+          setUploadingImage('success');
+        });
+    });
+  };
+
+  const imageStatus = () => {
+    if (uploadingImage === false) return;
+    if (uploadingImage === true) {
+      return 'Cargando...';
+    }
+    if (uploadingImage === 'success') {
+      return 'Imagen cargada correctamente';
+    }
+    if (uploadingImage === 'error') {
+      return 'Error al cargar la imagen';
+    }
+  };
 
   useEffect(() => {
     getDoc(doc(db, 'recipes', recipeId)).then((docSnapshot) => {
@@ -46,6 +90,7 @@ export default function ModifyRecipe() {
 
     const recipe = {
       title: name,
+      image: image,
       category: category,
       ingredients: ingredientsList,
       process: process,
@@ -53,6 +98,7 @@ export default function ModifyRecipe() {
 
     if (
       !recipe.title.length ||
+      !recipe.image ||
       !recipe.category ||
       recipe.category === 'none' ||
       !recipe.ingredients.length ||
@@ -97,6 +143,22 @@ export default function ModifyRecipe() {
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
+        </div>
+
+        <div className="input-container">
+          <label>Imagen:</label>
+          <input
+            className="input-file"
+            type="file"
+            onChange={(e) => setImageUpload(e.target.files[0])}
+          />
+          {imageStatus()}
+          <button
+            className="add-button image-btn"
+            onClick={(e) => uploadImage(e)}
+          >
+            Cargar
+          </button>
         </div>
 
         <div>

@@ -1,8 +1,11 @@
 import React, { useContext, createRef, useState } from 'react';
 import { addDoc, collection, writeBatch } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 
 import { db } from '../../services/Firebase/firebase';
+import { storage } from '../../services/Firebase/storage';
 
 import { AddRecipeContext } from '../../context/AddRecipeContext';
 
@@ -10,16 +13,21 @@ import './addRecipe.css';
 
 export default function AddRecipe({ showAddModal }) {
   const [processingRecipe, setProcessingRecipe] = useState(false);
+  const [uploadingImage, setUploadingImage] = useState(false);
   const addIngredientRef = createRef();
   const processRef = createRef();
   const navigate = useNavigate();
 
   const {
     name,
+    image,
+    imageUpload,
     category,
     ingredientsList,
     process,
     setName,
+    setImage,
+    setImageUpload,
     setCategory,
     removeIngredient,
     setIngredient,
@@ -28,6 +36,42 @@ export default function AddRecipe({ showAddModal }) {
     setProcess,
   } = useContext(AddRecipeContext);
 
+  const uploadImage = (e) => {
+    e.preventDefault();
+
+    if (imageUpload === null) return;
+
+    setUploadingImage(true);
+
+    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref)
+        .then((url) => {
+          setImage(url);
+        })
+        .catch((err) => {
+          console.log(err);
+          setUploadingImage('error');
+        })
+        .finally(() => {
+          setUploadingImage('success');
+        });
+    });
+  };
+
+  const imageStatus = () => {
+    if (uploadingImage === false) return;
+    if (uploadingImage === true) {
+      return 'Cargando...';
+    }
+    if (uploadingImage === 'success') {
+      return 'Imagen cargada correctamente';
+    }
+    if (uploadingImage === 'error') {
+      return 'Error al cargar la imagen';
+    }
+  };
+
   const submitRecipe = (e) => {
     e.preventDefault();
 
@@ -35,6 +79,7 @@ export default function AddRecipe({ showAddModal }) {
 
     const recipe = {
       title: name,
+      image: image,
       category: category,
       ingredients: ingredientsList,
       process: process,
@@ -42,12 +87,13 @@ export default function AddRecipe({ showAddModal }) {
 
     if (
       !recipe.title.length ||
+      !recipe.image ||
       !recipe.category ||
       recipe.category === 'none' ||
       !recipe.ingredients.length ||
       !recipe.process.length
     ) {
-      console.log('error');
+      console.log('error: not all fields filled');
       return;
     }
 
@@ -85,6 +131,17 @@ export default function AddRecipe({ showAddModal }) {
               placeholder="Tallarines a la puttanesca"
               onChange={(e) => setName(e.target.value)}
             />
+          </div>
+
+          <div className="input-container">
+            <label>Imagen:</label>
+            <input
+              className="input-file"
+              type="file"
+              onChange={(e) => setImageUpload(e.target.files[0])}
+            />
+            {imageStatus()}
+            <button onClick={(e) => uploadImage(e)}>Cargar</button>
           </div>
 
           <div>
