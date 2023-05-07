@@ -98,7 +98,6 @@ export default function ModifyRecipe() {
 
     if (
       !recipe.title.length ||
-      !recipe.image ||
       !recipe.category ||
       recipe.category === 'none' ||
       !recipe.ingredients.length ||
