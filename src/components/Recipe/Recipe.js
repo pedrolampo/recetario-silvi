@@ -13,8 +13,8 @@ export default function Recipe({ recipe }) {
     return (
       <div className="recipe">
         <div className="recipe-header">
-          <img className="recipe-image" src={recipe.image} alt="Recipe" />
           <h1 className="recipe-title">{recipe.title}</h1>
+          <img className="recipe-image" src={recipe.image} alt="Recipe" />
         </div>
 
         <h4 className="recipe-subtitle">Ingredientes</h4>

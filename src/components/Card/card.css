@@ -23,7 +23,8 @@
 
 .card {
   color: #5b362b;
-  -webkit-text-stroke: 0.001em #e5c2c2;
+  color: #fff;
+  -webkit-text-stroke: 0.001em #000;
   text-decoration: none;
 }
 
