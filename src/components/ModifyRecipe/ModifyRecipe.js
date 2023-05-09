@@ -17,6 +17,8 @@ export default function ModifyRecipe() {
   const addIngredientRef = createRef();
   const processRef = createRef();
 
+  const fileInputRef = createRef([]);
+
   const { recipeId } = useParams();
 
   const {
@@ -76,12 +78,24 @@ export default function ModifyRecipe() {
   useEffect(() => {
     getDoc(doc(db, 'recipes', recipeId)).then((docSnapshot) => {
       setName(docSnapshot.data().title);
+      setImage(docSnapshot.data().image);
       setCategory(docSnapshot.data().category);
       setIngredientsList(docSnapshot.data().ingredients);
       setProcess(docSnapshot.data().process);
       setProcessingRecipe(false);
     });
   }, [recipeId]); //eslint-disable-line
+
+  useEffect(() => {
+    const myFile = new File([image], image, {
+      type: 'text/plain',
+      lastModified: new Date(),
+    });
+    const dataTransfer = new DataTransfer();
+    dataTransfer.items.add(myFile);
+    if (!fileInputRef.current) return;
+    fileInputRef.current.files = dataTransfer.files;
+  }, [fileInputRef, image]);
 
   const update = (e) => {
     e.preventDefault();
@@ -113,6 +127,7 @@ export default function ModifyRecipe() {
       .then((docSnapshot) => {
         batch.update(doc(db, 'recipes', docSnapshot.id), {
           category: recipe.category,
+          image: recipe.image,
           title: recipe.title,
           ingredients: recipe.ingredients,
           process: recipe.process,
@@ -149,6 +164,7 @@ export default function ModifyRecipe() {
           <input
             className="input-file"
             type="file"
+            ref={fileInputRef}
             onChange={(e) => setImageUpload(e.target.files[0])}
           />
           {imageStatus()}
