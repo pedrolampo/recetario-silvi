@@ -4,11 +4,25 @@
   padding-right: 5em;
 }
 
+.recipe .recipe-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5em;
+  margin-bottom: 2em;
+}
+
+.recipe .recipe-image {
+  width: 300px;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
 .recipe .recipe-title {
   color: #da6837;
   font-family: Bright;
   font-size: 4em;
   text-align: center;
+  margin: 0;
 }
 
 .recipe .recipe-subtitle {

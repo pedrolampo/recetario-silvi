@@ -12,7 +12,10 @@ export default function Recipe({ recipe }) {
   if (recipe)
     return (
       <div className="recipe">
-        <h1 className="recipe-title">{recipe.title}</h1>
+        <div className="recipe-header">
+          <img className="recipe-image" src={recipe.image} alt="Recipe" />
+          <h1 className="recipe-title">{recipe.title}</h1>
+        </div>
 
         <h4 className="recipe-subtitle">Ingredientes</h4>
         <ul className="recipe-ingredients-list">
