@@ -3,13 +3,16 @@
   position: static;
   margin-top: 2em;
   overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .recipe-container {
     padding-left: 2em;
   }
-}
+} */
 
 @media screen and (max-width: 1080px) {
   .recipe-container {
